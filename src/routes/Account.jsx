@@ -2,7 +2,7 @@
 import { useState, useEffect } from 'react'
 
 // CREATE FUNCTION
-export default function ManageAccount() {
+export default function Account() {
 
     // HTML
     return (

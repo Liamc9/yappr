@@ -14,8 +14,9 @@ import Login from "./routes/Login";
 import Home from "./routes/Home";
 import Search from "./routes/Search";
 import SettingsPage from "./routes/Settings";
-import ManageAccount from "./routes/ManageAccount";
+import Account from "./routes/Account";
 import Profile from "./routes/Profile";
+import Group from "./routes/Group";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
@@ -43,6 +44,7 @@ const router = createBrowserRouter([
       { path: "login", element: <Login /> },
       { path: "home", element: <Home /> },
       { path: "search", element: <Search /> },
+      { path: "group", element: <Group /> },
       {
         path: "settings/:userId",
         element: (
@@ -52,10 +54,10 @@ const router = createBrowserRouter([
         ),
       },
       {
-        path: "settings/manageaccount/:userId",
+        path: "settings/Account/:userId",
         element: (
           <RequireAuth>
-            <ManageAccount />
+            <Account />
           </RequireAuth>
         ),
       },

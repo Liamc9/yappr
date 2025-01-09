@@ -5,9 +5,6 @@ import {
   HomeIcon3,
   SearchIcon2,
   UserIcon3,
-  CogIcon,
-  LoginIcon,
-  ChatIcon,
 } from "liamc9npm";
 import { useNotifications } from "../context/NotificationContext";
 import { getAuth, signOut } from "firebase/auth"; // Import Firebase auth functions
@@ -35,8 +32,10 @@ export default function Root() {
   // Paths where TopNavBar should be hidden
   const topNavHiddenPaths = [
     "/login",
+    "/home",
+    "/group",
     "/settings/:id",
-    "/settings/manageaccount/:id",
+    "/account/:id",
     "/profile/:id",
   ];
 
@@ -76,15 +75,9 @@ export default function Root() {
       hasNotification: notifications.search,
     },
     {
-      text: "Messages",
-      icon: ChatIcon,
-      path: "/messages",
-      hasNotification: notifications.messages,
-    },
-    {
       text: "Account",
       icon: UserIcon3,
-      path: currentUser ? `/settings/${currentUser.uid}` : "/login", // Dynamic user ID path or login fallback
+      path: currentUser ? `/account/${currentUser.uid}` : "/login", // Dynamic user ID path or login fallback
       hasNotification: notifications.account,
     },
   ];
@@ -101,8 +94,8 @@ export default function Root() {
               signInColor="#000000"
               navLinks={[
                 { name: "Home", path: "/home", Icon: HomeIcon3 },
-                { name: "Web Development", path: "/webdev", Icon: CogIcon },
-                { name: "Analytics", path: "/analytics", Icon: LoginIcon },
+                { name: "Search", path: "/search", Icon: SearchIcon2 },
+                { name: "Account", path: "/account", Icon: UserIcon3 },
               ]}
               username={currentUser?.displayName || "Guest"}
               profilePic={
@@ -123,7 +116,7 @@ export default function Root() {
       )}
 
       {/* Main Content with Conditional Margin */}
-      <div className={!shouldHideBottomNav() ? "pb-16" : ""}>
+      <div className={!shouldHideBottomNav() ? "pb-16 md:pb-0" : ""}>
         <Outlet />
       </div>
     </div>

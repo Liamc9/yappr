@@ -4,12 +4,22 @@
   "private": true,
   "dependencies": {
     "autoprefixer": "^10.4.20",
+    "cors": "^2.8.5",
     "cra-template": "1.2.0",
+    "dotenv": "^16.4.7",
+    "dragula": "^3.7.3",
     "firebase": "^11.1.0",
+    "liamc9npm": "^2.0.22",
     "postcss": "^8.4.49",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
+    "react-firebase-hooks": "^5.1.1",
+    "react-router-dom": "^7.1.1",
     "react-scripts": "5.0.1",
+    "react-toastify": "^11.0.2",
+    "stripe": "^17.5.0",
+    "styled-components": "^6.1.14",
+    "swiper": "^11.2.0",
     "tailwindcss": "^3.4.17"
   },
   "scripts": {

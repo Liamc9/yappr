@@ -8,8 +8,15 @@ import { getFunctions } from 'firebase/functions';
 
 // Firebase configuration
 const firebaseConfig = {
- 
-};
+    apiKey: "AIzaSyBQFHbtgvWh_Oeb9x24W5dH5n-nIAYHwvU",
+    authDomain: "yappr-1b993.firebaseapp.com",
+    projectId: "yappr-1b993",
+    storageBucket: "yappr-1b993.firebasestorage.app",
+    messagingSenderId: "279462842291",
+    appId: "1:279462842291:web:77bf4559bc3950975c45c6",
+    measurementId: "G-PC78V5KG5J"
+  };
+  
 
 
 // Initialize Firebase and export services
